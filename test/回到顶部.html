@@ -1,0 +1,62 @@
+<!DOCTYPE html >
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0, user-scalable = no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Document </title>
+    <style>
+        body {
+            height: 3000px;
+        }
+        
+        #app {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 100px;
+            height: 100px;
+            background: black;
+            border-radius: 50%;
+        }
+        
+        input {
+            width: 500px;
+            height: 100px;
+            background: no-repeat left center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+    </div>
+
+    <body type="text" style="background-image:url(../src/assets/images/logo.png);">
+        </input>
+
+    </body>
+    <script>
+        const app = document.getElementById('app');
+        var oTop, num, timer;
+        window.onscroll = function() {
+            oTop = window.scrollY;
+            num = oTop;
+            app.onclick = function() {
+                timer = setInterval(() => {
+                    num -= 20;
+                    document.documentElement.scrollTop = num;
+                    if (num <= 0) {
+                        clearInterval(timer);
+                    }
+                    console.log(num);
+                }, 10)
+            }
+
+        };
+        // num = oTop;
+    </script>
+
+</html>

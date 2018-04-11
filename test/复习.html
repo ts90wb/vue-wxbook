@@ -1,0 +1,261 @@
+<!DOCTYPE html >
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0, user-scalable = no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Document </title>
+    <style>
+        input {
+            caret-color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="" id="form">
+        <input type="text" name="name">
+        <input type="password" name="psw">
+        <input type="checkbox" name="ck">
+        <select name="sel" id="">
+     <option value="0">苹果</option>
+     <option value="1">橘子</option>
+     <option value="2">香蕉</option>
+   </select>
+    </form>
+    <button id="btn">提交</button>
+</body>
+<script>
+    const arr = [1, 2, 3, 3, 2, 0, false, false, true];
+
+
+    // function unique(a) {
+    //     const obj = {};
+    //     const newArr = [];
+    //     for (let i = 0, len = a.length; i < len; i++) {
+    //         const element = a[i];
+    //         if (!obj[element]) {
+    //             newArr.push(element);
+    //             obj[element] = 1;
+    //         }
+
+    //     }
+    //     return newArr;
+
+    // }
+    // =========================================
+    // function unique(a) {
+    //     let len = a.length;
+    //     for (let i = 0; i < len; i++) {
+    //         const eleI = a[i];
+    //         for (let j = i + 1; j < len; j++) {
+    //             const eleJ = a[j];
+    //             if (eleI === eleJ) {
+    //                 a.splice(j, 1);
+    //                 len--;
+    //                 j--;
+    //             }
+    //         }
+
+    //     }
+    //     return a;
+    // }
+
+    //==============================================
+    // function unique(a) {
+    //     let len = a.length;
+    //     let newArr = []
+    //     for (let i = 0; i < len; i++) {
+    //         const eleI = a[i];
+    //         for (let j = i + 1; j < len; j++) {
+    //             const eleJ = a[j];
+    //             if (eleJ === eleI) {
+    //                 j = ++i;
+    //             }
+    //         }
+    //         newArr.push(a[i]);
+    //     }
+    //     return newArr;
+    // }
+    //=====================================================
+    // function unique(a) {
+    //     let newArr = [];
+    //     a.forEach((item, index, arr) => {
+    //         if (arr.indexOf(item, index + 1) == -1) {
+    //             newArr.push(item);
+    //         }
+    //     });
+    //     return newArr;
+    // }
+    //==========================================
+    // function unique(a) {
+    //     a.sort(function(a, b) {
+    //         return a - b;
+    //     });
+
+    //     function loop(index) {
+    //         if (index >= 1) {
+    //             if (a[index] === a[index - 1]) {
+    //                 a.splice(index, 1);
+    //             }
+    //             loop(index - 1);
+
+    //         }
+    //     }
+    //     loop(a.length - 1);
+    //     return a;
+    // }
+    //=============================
+
+    //========================
+
+    // console.log(unique(arr));
+    // 'use strict'
+    // let a = 10;
+    // if (a) {
+    //     let a = 1;
+    //     console.log(a);
+    // }
+    // console.log(a);
+    //================
+    // let oLis = document.getElementsByTagName('li');
+    // for (var i = 0, len = oLis.length; i < len; i++) {
+    //     // (function(i) {
+    //     oLis[i].index = i;
+    //     oLis[i].onclick = function() {
+    //             console.log(this.index);
+    //         }
+    //         // })(i)
+
+    // }
+    // let arrNew = [{
+    //         name: 1
+    //     }, {
+    //         title: 2
+    //     }, {
+    //         school: 3
+    //     }],
+    //     arrOld = [{
+    //         school: 3
+    //     }, {
+    //         name: 1
+    //     }, {
+    //         title: 2
+    //     }];
+    // arrNew.forEach(b => {
+    //     arrOld = arrOld.filter(item => item.name === b.name);
+    // })
+    // console.log(arrOld);
+    //=================================
+    // String.prototype.getParam = function getParam(key) {
+    //     let val = null;
+    //     let str = this.split('?')[1];
+
+    //     this.replace(/(\w+)=(\w+)/g, function() {
+    //         console.log(arguments[0]);
+    //         if (key == arguments[1]) {
+    //             val = arguments[2];
+    //         }
+    //     });
+    //     return val;
+    //     // let reg = new RegExp(key + '=(\\w+)');
+    //     // console.log(reg.exec(str)[1]);
+    //     // console.log(str.match(reg)[1]);
+    // }
+    // let str1 = 'local:?key1=234&key2=erer&key3=yueue';
+    // console.log(str1.getParam('key2'));
+    //=============================================
+    // var obj = {
+    //     ful: 'dwew',
+    //     prop: {
+    //         getFul: function() {
+    //             return this.ful;
+    //         }
+    //     }
+    // }
+    // console.log(obj.prop.getFul());
+    //======================================
+    // String.prototype.repeatify = function(n) {
+    //     let newStr = ''
+    //     n = Math.round(n);
+    //     if (n && n > 0) {
+    //         for (let i = 0; i < n; i++) {
+    //             newStr += this;
+    //         }
+    //     }
+
+    //     return newStr;
+    // }
+    // let str = 'abc';
+    // console.log(str.repeatify(3));
+    //==================================
+    // var str = "hello<img src='../img.png' alt='图片' >world"
+    // var reg = /^(\w+).+(图片)' >(\w+)$/g;
+    // // console.log(reg.exec(str));
+    // str = str.replace(reg, '$1[$2]$3');
+    // console.log(str);
+    //=====================================
+    //链式写法
+    // function FF() {
+    //     this.x = 1;
+    //     this.y = 2;
+    //     this.getX = function() {
+    //         console.log(this.x);
+    //         return this;
+    //     }
+    //     this.getY = function() {
+    //         console.log(this.y);
+    //         return this;
+    //     }
+    // }
+    // var ff = new FF();
+    // ff.getX().getY();
+    //=========================================
+    // let form = document.getElementById('form');
+    // let btn = document.getElementById('btn');
+
+    // function getVal(ele) {
+    //     let oInput = ele.getElementsByTagName('input');
+    //     let oSel = ele.getElementsByTagName('select');
+    //     let inputAry = [].concat.apply([], oInput);
+    //     // let inputAry = Array.prototype.slice.call(oInput);
+
+    //     let all = inputAry.concat.apply(inputAry, oSel);
+    //     let obj = {};
+    //     all.forEach(item => {
+    //         obj[item.name] = item.value;
+    //     });
+    //     return [obj, all, all[2].checked];
+    // }
+    // btn.onclick = function() {
+    //     console.log(getVal(form));
+    // };
+    //==========================================
+    // Function.prototype.fnLength = function() {
+    //     let ary = [...arguments];
+    //     eval('this(' + ary + ')');
+    //     return arguments.length;
+
+    // }
+
+    // function test(a, b) {
+    //     console.log(a, b);
+    // }
+    // console.log(test.fnLength(1, 2, 3));
+    function add(val) {
+        var rs = function(oval) {
+                return add(val + oval);
+            }
+            // console.log(rs.toString());
+            // console.dir(rs);
+        rs.toString = function() {
+            return val;
+        }
+        return rs;
+    }
+    console.log(Object.prototype.toString.call(add(1)(2)(3)(4)));
+</script>
+
+</html>
