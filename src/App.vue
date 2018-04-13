@@ -1,10 +1,12 @@
 <template>
   <div id="app">
-    <tab></tab>
- <div class="content">
-     <transition name="slide-fade">
-     <router-view></router-view>
+    <div class="content">
+     <transition name="slide">
+     <keep-alive>
+     <router-view ></router-view>
+     </keep-alive>
      </transition>
+    <tab></tab>
  </div>
   </div>
 </template>
@@ -27,15 +29,21 @@ return {
 </script>
 
 <style lang='less' scoped>
-.slide-fade-enter-active{
-  transition: all .3s ease;
+.content{
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
 }
-.slide-fade-leave-active{
-  transition: all .3s cubic-bezier(1, .5, .8, 1);
+.slide-enter{
+  transform: translateX(100%);
 }
-.slide-fade-enter,.slide-fade-leave-active{
-  transform: translateX(-430px);
-  opacity: 0;
+.slide-leave-active,
+.slide-enter-active{
+transition:all .3s linear;
+}
+.slide-leave-active{
+  transition:translateX(-100%);
 }
 .active{
   color: red;

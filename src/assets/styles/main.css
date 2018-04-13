@@ -2,3 +2,16 @@
     color: orangered;
     font-size: 24px;
 }
+
+.swiper-pagination-total {
+    font-size: 18px;
+}
+
+@media screen and (min-width:768px) {
+    .swiper-pagination-current {
+        font-size: 34px;
+    }
+    .swiper-pagination-total {
+        font-size: 30px;
+    }
+}

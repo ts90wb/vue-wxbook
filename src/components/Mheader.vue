@@ -2,7 +2,7 @@
 <template>
   <div>
     <header>
-      <div class="back iconfont icon-arrow"></div>
+      <div class="back iconfont icon-arrow" @click="goBack"></div>
       <h2>{{title}}</h2>
     </header>
   </div>
@@ -17,7 +17,11 @@ export default {
 
   components: {},
   computed: {},
-  methods: {}
+  methods: {
+    goBack(){
+      this.$router.go(-1);
+    }
+  }
 };
 </script>
 <style lang='less' scoped>

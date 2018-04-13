@@ -1,20 +1,28 @@
 <!-- by your name -->
 <template>
-  <div>分類</div>
+  <div>
+    <Mheader title="图书分类"></Mheader>
+    <search-bar></search-bar>
+  </div>
 </template>
 
 <script>
+import Mheader from 'components/Mheader'
+import SearchBar from 'components/SearchBar'
 export default {
   data () {
     return {
     };
   },
 
-  components: {},
+  components: {
+    Mheader,
+    SearchBar
+  },
   computed: {},
   methods: {}
 }
 
 </script>
-<style lang='css' scoped>
+<style lang='less' scoped>
 </style>
