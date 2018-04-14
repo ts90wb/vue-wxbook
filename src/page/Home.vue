@@ -480,8 +480,6 @@ header {
 }
 .content {
   width: 100%;
-  margin-bottom: 65px;
-  margin-top: 40px;
   background: #fff;
   .hot {
     display: flex;

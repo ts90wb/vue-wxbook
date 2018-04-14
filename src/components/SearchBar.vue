@@ -2,18 +2,16 @@
 <template>
   <div class="wrapper">
     <transition name="spread">
-        <div class="hidden" v-show="!isShow">
+        <div class="search-hidden" v-show="!isShow">
       <input type="text" placeholder="请输入要搜索内容">
       <i class="iconfont icon-search"></i>
       <span>搜索</span>
     </div>
     </transition>
-    <div class="show" v-show="isShow" @click="showBar">
+    <div class="search-show" v-show="isShow" @click="showBar">
       搜索
     </div>
-    <div class="content">
 
-    </div>
   </div>
 
 </template>
@@ -41,11 +39,13 @@ this.isShow=true;
 </script>
 <style lang='less' scoped>
 .wrapper {
-  .hidden {
+  .search-hidden {
+    position:fixed;
+    top:40px;
+    left:0;
     display: flex;
     width: 100%;
     height: 40px;
-    margin-top: 40px;
     padding: 8px 0 8px 10px;
     box-sizing: border-box;
     background: #ddd;
@@ -76,22 +76,21 @@ this.isShow=true;
       text-align: center;
     }
   }
-  .show{
+  .search-show{
     position: fixed;
     right: 0;
-    top:40px;
+    top:41px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgb(97, 63, 0);
+    background: #ad258c;
     text-align: center;
     line-height: 40px;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
     color: #eee;
+    font-size: 14px;
   }
-  .content{
-   
-  }
+
 }
 .spread-enter{
   transform: scaleX(0);
@@ -101,6 +100,6 @@ this.isShow=true;
   transition:all .5s;
 }
 .spread-leave-active{
-  transform: scaleX(100%);
+  transform: scaleX(0);
 }
 </style>

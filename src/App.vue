@@ -34,6 +34,7 @@ return {
   left:0;
   top:0;
   width:100%;
+  margin: 40px 0 65px 0;
 }
 .slide-enter{
   transform: translateX(100%);
